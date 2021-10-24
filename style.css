@@ -1,0 +1,168 @@
+@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@300;400;600&display=swap');
+:root{
+    /*Primary*/
+    --desaturated-red: hsl(0, 36%, 70%);
+    --soft-red: hsl(0, 93%, 68%);
+    /*Neutral*/
+    --dark-grayish-red: hsl(0, 6%, 24%);
+}
+html {
+    font-size: 100%;
+    box-sizing: border-box;
+}
+*, *::before, *::after {
+    box-sizing: inherit;
+}
+body {
+    font-family: 'Josefin Sans', sans-serif;
+    font-size: 1rem;
+    margin: 0;
+    padding: 0;
+}
+main {
+    max-width: 100%;
+    min-height: 97vh; 
+}
+.logo-container {
+    height: 5.3125rem;
+    padding: 1.5625rem;
+}
+.hero-img-mob {
+    width: 100%;
+    height: auto;
+}
+.hero-content {
+    text-align: center;
+    padding: 3.4375rem 1.875rem 5.3125rem;
+}
+.hero-title {
+    color: var(--dark-grayish-red);
+    font-size: 1.75rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    line-height: 1.2;
+    letter-spacing: 0.625rem;
+    max-width: 14.375rem;
+    margin: 0 auto;
+}
+.red-text {
+    color: var(--desaturated-red);
+    font-weight: 300;
+}
+.hero-text {
+    color: var(--desaturated-red);
+    line-height: 1.5;
+    margin: 1.5625rem 0;
+}
+#form {
+    position: relative;
+    width: 18.75rem;
+    margin: 0 auto;
+}
+#form.invalid::before {
+    content: "";
+    background: url("images/icon-error.svg");
+    background-repeat: no-repeat;
+    display: block;
+    position: absolute;
+    width: 1.875rem;
+    height: 1.875rem;
+    top: 13%;
+    right: 20%;
+}
+#email {
+    border: 1px solid var(--desaturated-red);
+    border-radius: 1.875rem;
+    width: 100%;
+    height: 2.5rem;
+    padding-left: 1.875rem;
+}
+#form.invalid #email {
+    border: 2px solid var(--soft-red);
+}
+#form.invalid #email::placeholder {
+    color: #000;
+}
+#email::placeholder {
+    color: var(--desaturated-red);
+    font-size: 1rem;
+}
+.submit-btn {
+    background: linear-gradient(135deg, hsl(0, 80%, 86%), hsl(0, 74%, 74%));
+    border: none;
+    border-radius: 1.875rem;
+    width: 3.75rem;
+    height: 2.5rem;
+    position: absolute;
+    right: 0;
+}
+.submit-btn:hover {
+    background: linear-gradient(135deg, hsl(0, 0%, 100%), hsl(0, 100%, 85%));
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+}
+.err-msg {
+    display: none;
+    color: var(--soft-red);
+    text-align: left;
+    font-size: 0.6875rem;
+    margin-top: 0.625rem;
+    margin-left: 1.25rem;
+}
+#form.invalid .err-msg{
+    display: block;
+}
+footer {
+    min-height: 2vh;
+}
+.attribution { font-size: 11px; text-align: center; }
+.attribution a { color: hsl(228, 45%, 44%); }
+@media only screen and (min-width: 46.875rem) {
+    main {
+        display: grid;
+        grid-template-columns: 60% 40%;
+        grid-template-rows: 9.375rem 1fr;
+    }
+    .logo-container {
+        padding-top: 3.4375rem;
+        padding-left: 10rem;
+    }
+    .hero-img-mob {
+        width: 100%;
+        height: 97vh;
+    }
+    .hero-content {
+        text-align: left;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        padding: 0;
+        grid-row: 2/3;
+        grid-column: 1/2;
+    }
+    .hero-title {
+        font-size: 2.8125rem;
+        max-width: 26.25rem;
+    }
+    .hero-text {
+        max-width: 26.25rem;
+        margin: 2.1875rem 0;
+    }
+    #form {
+        width: 26.25rem;
+    }
+    #form.invalid::before {
+        top: 20%;
+        right: 25%;
+    }
+    #email {
+        height: 3.4375rem;
+    }
+    .submit-btn {
+        width: 6.25rem;
+        height: 3.4375rem;
+    }
+    .err-msg {
+        margin-left: 1.5625rem;
+    }
+}
